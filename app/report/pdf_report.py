@@ -73,9 +73,9 @@ class _RelatorioPDF(FPDF):
         self._autor = autor
         self._fonte_simbolos_disponivel = _CAMINHO_FONTE_SIMBOLOS.exists()
         if self._fonte_simbolos_disponivel:
-            self.add_font(_FONTE_SIMBOLOS, "", str(_CAMINHO_FONTE_SIMBOLOS))
+            self.add_font(_FONTE_SIMBOLOS, "", str(_CAMINHO_FONTE_SIMBOLOS), uni=True)
             if _CAMINHO_FONTE_SIMBOLOS_NEGRITO.exists():
-                self.add_font(_FONTE_SIMBOLOS, "B", str(_CAMINHO_FONTE_SIMBOLOS_NEGRITO))
+                self.add_font(_FONTE_SIMBOLOS, "B", str(_CAMINHO_FONTE_SIMBOLOS_NEGRITO), uni=True)
 
     def header(self) -> None:
         self.set_fill_color(240, 243, 246)
